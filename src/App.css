@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .glow-effect {
+      box-shadow: 0 0 10px rgb(250, 177, 19); /* Adjust color and blur radius as needed */
+    }
+    .glow-effect:hover{
+      box-shadow: 0 0 20px rgb(23, 19, 250); /* Adjust color and blur radius as needed */
+    }
+  }
+  @keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%); /* Adjust this value as needed */
+    }
+    
+}
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  position: fixed; /* Make it fixed to cover the whole screen */
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.5); /* Optional: semi-transparent background */
+  z-index: 9999; /* High z-index to ensure it's on top */
+}
+
+.spinner {
+  border: 8px solid rgba(255, 255, 255, 0.3); /* Adjust size as needed */
+  border-radius: 50%;
+  border-top: 8px solid #000; /* Adjust color as needed */
+  width: 80px; /* Adjust size as needed */
+  height: 80px; /* Adjust size as needed */
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+.mascot-container {
+    width: 100%; /* Container width */
+    overflow: hidden; /* Hide the overflow */
+}
+
+.mascot {
+    width: 150px; /* Set the width of your mascot image */
+    animation: slide 5s infinite alternate ease-in-out; /* Adjust time as needed */
+}
